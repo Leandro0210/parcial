@@ -1,278 +1,95 @@
 ﻿using System;
 
-namespace CalculadoraMovimiento
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        while (true)
         {
-            bool salir = false;
+            Console.WriteLine("Bienvenido a la Calculadora Física");
+            Console.WriteLine("Seleccione el tipo de cálculo:");
+            Console.WriteLine("1. Movimiento Rectilíneo Uniforme (MRU)");
+            Console.WriteLine("2. Movimiento Rectilíneo Uniformemente Acelerado (MRUA)");
+            Console.WriteLine("3. Area de un rectangulo");
+            Console.WriteLine("4. Salir");
 
-            while (!salir)
+            int opcion = int.Parse(Console.ReadLine());
+
+            if (opcion == 1)
             {
-                Console.WriteLine("Bienvenido a la Calculadora de Movimiento");
-                Console.WriteLine("Seleccione la opcion que desea:");
-                Console.WriteLine("1. Movimiento Rectilineo Uniforme (MRU)");
-                Console.WriteLine("2. Movimiento Rectilineo Uniformemente Acelerado (MRUA)");
-                Console.WriteLine("3. Salir");
-
-                int opcion;
-                if (!int.TryParse(Console.ReadLine(), out opcion))
-                {
-                    Console.WriteLine("Opcion no valida. Por favor, seleccione una opcion valida.");
-                    continue;
-                }
-
-                switch (opcion)
-                {
-                    case 1:
-                        CalcularMRU();
-                        break;
-                    case 2:
-                        CalcularMRUA();
-                        break;
-                    case 3:
-                        salir = true;
-                        break;
-                    default:
-                        Console.WriteLine("Opcion no valida. Por favor, seleccione una opcion valida.");
-                        break;
-                }
+                CalcularMRU();
+            }
+            else if (opcion == 2)
+            {
+                CalcularMRUA();
+            }
+            else if (opcion == 3)
+            {
+                CalcularArea();
+            }
+            else if (opcion == 4)
+            {
+                Console.WriteLine("¡Hasta luego!");
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Opción inválida. Por favor, seleccione una opción válida.");
             }
         }
-         static void CalcularMRU()
-        {
-            Console.WriteLine("Ha seleccionado Movimiento Rectilineo Uniforme (MRU).");
-            Console.WriteLine("Que desea calcular?");
-            Console.WriteLine("1. Distancia");
-            Console.WriteLine("2. Tiempo");
-            Console.WriteLine("3. Velocidad");
+    }
+    // opcion 4, salir  
+    //opcion 3, otro calculo, 
+    //calcular el area de un rectangulo, pedir la base y la altura
 
-            int opcion;
-            if (!int.TryParse(Console.ReadLine(), out opcion))
-            {
-                Console.WriteLine("Opcion no valida. Por favor, seleccione una opcion valida.");
-                return;
-            }
+    static void CalcularMRU()
+    {
+        Console.WriteLine("Ingrese los valores para el cálculo de MRU:");
+        Console.Write("Velocidad (m/s): ");
+        double velocidad = double.Parse(Console.ReadLine());
+        Console.Write("Tiempo (s): ");
+        double tiempo = double.Parse(Console.ReadLine());
 
-            switch (opcion)
-            {
-                case 1:
-                    CalcularDistanciaMRU();
-                    break;
-                case 2:
-                    CalcularTiempoMRU();
-                    break;
-                case 3:
-                    CalcularVelocidadMRU();
-                    break;
-                default:
-                    Console.WriteLine("Opcion no valida. Por favor, seleccione una opcion valida.");
-                    break;
-            }
-        }
+        double distancia = velocidad * tiempo;
+        double nuevaVelocidad = distancia / tiempo;
+        double nuevoTiempo = distancia / nuevaVelocidad;
 
-        static void CalcularDistanciaMRU()
-        {
-            Console.WriteLine("Ingrese la velocidad (m/s):");
-            double velocidad;
-            while (!double.TryParse(Console.ReadLine(), out velocidad))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
+        Console.WriteLine($"Distancia (d = v * t): {distancia} metros");
+        Console.WriteLine($"Velocidad (v = d / t): {nuevaVelocidad} m/s");
+        Console.WriteLine($"Tiempo (t = d / v): {nuevoTiempo} segundos");
+    }
 
-            Console.WriteLine("Ingrese el tiempo (s):");
-            double tiempo;
-            while (!double.TryParse(Console.ReadLine(), out tiempo))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
+    static void CalcularMRUA()
+    {
+        Console.WriteLine("Ingrese los valores para el cálculo de MRUA:");
+        Console.Write("Posición inicial (m): ");
+        double posicionInicial = double.Parse(Console.ReadLine());
+        Console.Write("Velocidad inicial (m/s): ");
+        double velocidadInicial = double.Parse(Console.ReadLine());
+        Console.Write("Aceleración (m/s^2): ");
+        double aceleracion = double.Parse(Console.ReadLine());
+        Console.Write("Tiempo (s): ");
+        double tiempo = double.Parse(Console.ReadLine());
 
-            double distancia = velocidad * tiempo;
-            Console.WriteLine($"La distancia recorrida es: {distancia} metros.");
-        }
+        double posicionFinal = posicionInicial + velocidadInicial * tiempo + 0.5 * aceleracion * Math.Pow(tiempo, 2);
+        double nuevaVelocidad = velocidadInicial + aceleracion * tiempo;
+        double nuevoTiempo = (nuevaVelocidad - velocidadInicial) / aceleracion;
 
-        static void CalcularTiempoMRU()
-        {
-            Console.WriteLine("Ingrese la distancia (metros):");
-            double distancia;
-            while (!double.TryParse(Console.ReadLine(), out distancia))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
+        Console.WriteLine($"Posición final (x = x0 + v0 * t + 0.5 * a * t^2): {posicionFinal} metros");
+        Console.WriteLine($"Velocidad final (v = v0 + a * t): {nuevaVelocidad} m/s");
+        Console.WriteLine($"Tiempo (t = (v - v0) / a): {nuevoTiempo} segundos");
+    }
 
-            Console.WriteLine("Ingrese la velocidad (m/s):");
-            double velocidad;
-            while (!double.TryParse(Console.ReadLine(), out velocidad))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
+    static void CalcularArea()
+    {
+        Console.WriteLine("Ingrese los valores para el calculo del area de un rectangulo: ");
+        Console.Write("Medida de la base (m): ");
+        double Basedelrectangulo = double.Parse(Console.ReadLine());
+        Console.Write("Medida de la altura: ");
+        double Alturadelrectangulo = double.Parse(Console.ReadLine());
 
-            double tiempo = distancia / velocidad;
-            Console.WriteLine($"El tiempo transcurrido es: {tiempo} segundos.");
-        }
-        static void CalcularVelocidadMRU()
-        {
-            Console.WriteLine("Ingrese la distancia (metros):");
-            double distancia;
-            while (!double.TryParse(Console.ReadLine(), out distancia))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
+        double Areadelrectangulo = Basedelrectangulo * Alturadelrectangulo;
 
-            Console.WriteLine("Ingrese el tiempo (s):");
-            double tiempo;
-            while (!double.TryParse(Console.ReadLine(), out tiempo))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
-
-            double velocidad = distancia / tiempo;
-            Console.WriteLine($"La velocidad es: {velocidad} m/s.");
-        }
-
-        static void CalcularMRUA()
-        {
-            Console.WriteLine("Ha seleccionado Movimiento Rectilineo Uniformemente Acelerado (MRUA).");
-            Console.WriteLine("Que desea calcular?");
-            Console.WriteLine("1. Distancia");
-            Console.WriteLine("2. Tiempo");
-            Console.WriteLine("3. Velocidad inicial");
-            Console.WriteLine("4. Velocidad final");
-
-            int opcion;
-            if (!int.TryParse(Console.ReadLine(), out opcion))
-            {
-                Console.WriteLine("Opcion no valida. Por favor, seleccione una opcion valida.");
-                return;
-            }
-
-            switch (opcion)
-            {
-                case 1:
-                    CalcularDistanciaMRUA();
-                    break;
-                case 2:
-                    CalcularTiempoMRUA();
-                    break;
-                case 3:
-                    CalcularVelocidadInicialMRUA();
-                    break;
-                case 4:
-                    CalcularVelocidadFinalMRUA();
-                    break;
-                default:
-                    Console.WriteLine("Opcion no valida. Por favor, seleccione una opcion valida.");
-                    break;
-            }
-        }
-
-        static void CalcularDistanciaMRUA()
-        {
-            Console.WriteLine("Ingrese la velocidad inicial (m/s):");
-            double velocidadInicial;
-            while (!double.TryParse(Console.ReadLine(), out velocidadInicial))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
-
-            Console.WriteLine("Ingrese la velocidad final (m/s):");
-            double velocidadFinal;
-            while (!double.TryParse(Console.ReadLine(), out velocidadFinal))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
-
-            Console.WriteLine("Ingrese la aceleracion (m/s^2):");
-            double aceleracion;
-            while (!double.TryParse(Console.ReadLine(), out aceleracion))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
-
-            double distancia = (Math.Pow(velocidadFinal, 2) - Math.Pow(velocidadInicial, 2)) / (2 * aceleracion);
-            Console.WriteLine($"La distancia recorrida es: {distancia} metros.");
-        }
-
-        static void CalcularTiempoMRUA()
-        {
-            Console.WriteLine("Ingrese la velocidad inicial (m/s):");
-            double velocidadInicial;
-            while (!double.TryParse(Console.ReadLine(), out velocidadInicial))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
-
-            Console.WriteLine("Ingrese la velocidad final (m/s):");
-            double velocidadFinal;
-            while (!double.TryParse(Console.ReadLine(), out velocidadFinal))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
-
-            Console.WriteLine("Ingrese la aceleracion (m/s^2):");
-            double aceleracion;
-            while (!double.TryParse(Console.ReadLine(), out aceleracion))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
-
-            double tiempo = (velocidadFinal - velocidadInicial) / aceleracion;
-            Console.WriteLine($"El tiempo transcurrido es: {tiempo} segundos.");
-        }
-
-        static void CalcularVelocidadInicialMRUA()
-        {
-            Console.WriteLine("Ingrese la velocidad final (m/s):");
-            double velocidadFinal;
-            while (!double.TryParse(Console.ReadLine(), out velocidadFinal))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
-
-            Console.WriteLine("Ingrese la aceleracion (m/s^2):");
-            double aceleracion;
-            while (!double.TryParse(Console.ReadLine(), out aceleracion))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
-
-            Console.WriteLine("Ingrese el tiempo (s):");
-            double tiempo;
-            while (!double.TryParse(Console.ReadLine(), out tiempo))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
-
-            double velocidadInicial = velocidadFinal - aceleracion * tiempo;
-            Console.WriteLine($"La velocidad inicial es: {velocidadInicial} m/s.");
-        }
-
-        static void CalcularVelocidadFinalMRUA()
-        {
-            Console.WriteLine("Ingrese la velocidad inicial (m/s):");
-            double velocidadInicial;
-            while (!double.TryParse(Console.ReadLine(), out velocidadInicial))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
-
-            Console.WriteLine("Ingrese la aceleracion (m/s^2):");
-            double aceleracion;
-            while (!double.TryParse(Console.ReadLine(), out aceleracion))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
-
-            Console.WriteLine("Ingrese el tiempo (s):");
-            double tiempo;
-            while (!double.TryParse(Console.ReadLine(), out tiempo))
-            {
-                Console.WriteLine("Entrada invalida. Por favor, ingrese un numero valido.");
-            }
-
-            double velocidadFinal = velocidadInicial + aceleracion * tiempo;
-            Console.WriteLine($"La velocidad final es: {velocidadFinal} m/s.");
-        }
+        Console.WriteLine($"Area del rectangulo: {Areadelrectangulo} metros");
     }
 }
