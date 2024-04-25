@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Spectre\\OneDrive\\desktop\\parcial\\parcial.csproj": {}
+    "C:\\Users\\Spectre\\OneDrive\\Desktop\\parcial\\parcial.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Spectre\\OneDrive\\desktop\\parcial\\parcial.csproj": {
+    "C:\\Users\\Spectre\\OneDrive\\Desktop\\parcial\\parcial.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Spectre\\OneDrive\\desktop\\parcial\\parcial.csproj",
+        "projectUniqueName": "C:\\Users\\Spectre\\OneDrive\\Desktop\\parcial\\parcial.csproj",
         "projectName": "parcial",
-        "projectPath": "C:\\Users\\Spectre\\OneDrive\\desktop\\parcial\\parcial.csproj",
+        "projectPath": "C:\\Users\\Spectre\\OneDrive\\Desktop\\parcial\\parcial.csproj",
         "packagesPath": "C:\\Users\\Spectre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Spectre\\OneDrive\\desktop\\parcial\\obj\\",
+        "outputPath": "C:\\Users\\Spectre\\OneDrive\\Desktop\\parcial\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Spectre\\AppData\\Roaming\\NuGet\\NuGet.Config"
