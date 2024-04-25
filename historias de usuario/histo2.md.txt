@@ -1,0 +1,9 @@
+Como estudiante de física,
+Quiero utilizar una calculadora que me permita calcular el tiempo transcurrido en un Movimiento Rectilíneo Uniformemente Variado (MRUV)
+Para resolver problemas donde conozco la velocidad inicial, la velocidad final y la aceleración, y necesito determinar el tiempo.
+
+#### Criterios de Aceptación:
+- Debo poder ingresar la velocidad inicial en metros por segundo (m/s).
+- Debo poder ingresar la velocidad final en metros por segundo (m/s).
+- Debo poder ingresar la aceleración en metros por segundo cuadrado (m/s^2).
+- La calculadora debe devolver el tiempo transcurrido en segundos (s).

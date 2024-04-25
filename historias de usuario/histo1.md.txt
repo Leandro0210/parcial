@@ -1,0 +1,8 @@
+Como estudiante de física,
+Quiero utilizar una calculadora que me permita calcular la distancia recorrida en un Movimiento Rectilíneo Uniforme (MRU)
+Para resolver problemas donde conozco la velocidad y el tiempo y necesito determinar la distancia.
+
+#### Criterios de Aceptación:
+- Debo poder ingresar la velocidad en metros por segundo (m/s).
+- Debo poder ingresar el tiempo en segundos (s).
+- La calculadora debe devolver la distancia recorrida en metros (m).
