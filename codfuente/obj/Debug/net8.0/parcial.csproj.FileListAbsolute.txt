@@ -1,0 +1,15 @@
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\bin\Debug\net8.0\parcial.exe
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\bin\Debug\net8.0\parcial.deps.json
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\bin\Debug\net8.0\parcial.runtimeconfig.json
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\bin\Debug\net8.0\parcial.dll
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\bin\Debug\net8.0\parcial.pdb
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\obj\Debug\net8.0\parcial.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\obj\Debug\net8.0\parcial.AssemblyInfoInputs.cache
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\obj\Debug\net8.0\parcial.AssemblyInfo.cs
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\obj\Debug\net8.0\parcial.csproj.CoreCompileInputs.cache
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\obj\Debug\net8.0\parcial.sourcelink.json
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\obj\Debug\net8.0\parcial.dll
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\obj\Debug\net8.0\refint\parcial.dll
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\obj\Debug\net8.0\parcial.pdb
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\obj\Debug\net8.0\parcial.genruntimeconfig.cache
+C:\Users\Spectre\OneDrive\Desktop\parcial\codfuente\obj\Debug\net8.0\ref\parcial.dll
